@@ -24,7 +24,7 @@ int main()
 
     min=INF;
     for(i=1;i<=n;i++)
-    { /*§ä¥X³Ì§Ccostªºedge¡A¨Ã¥H¼Æ¦r¤pªº·í§@°_ÂI*/
+    { /*æ‰¾å‡ºæœ€ä½Žcostçš„edgeï¼Œä¸¦ä»¥æ•¸å­—å°çš„ç•¶ä½œèµ·é»ž*/
         for(j=1;j<=n;j++)
         {
             if(cost[i][j]<min && !visit[j])
