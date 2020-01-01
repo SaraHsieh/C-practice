@@ -27,29 +27,29 @@ int main()
 
     fin=fopen("6input.txt","r");
     printf("Input 1:\n");
-    fscanf(fin,"%[^\n]",&s);   /*ÅªÀÉ¡A¦]ÀÉ®×®æ¦¡¤¤¦³ªÅ®æ¡A¥Î[^/n]¸õ¹L©Ò¦³ªÅ®æ*/
+    fscanf(fin,"%[^\n]",&s);   /*è®€æª”ï¼Œå› æª”æ¡ˆæ ¼å¼ä¸­æœ‰ç©ºæ ¼ï¼Œç”¨[^/n]è·³éæ‰€æœ‰ç©ºæ ¼*/
     printf("%s",s);
     lens=strlen(s);
     printf("\nOutput 1:\n");
     for (i=0;i<lens;i++)
     {
-        if (s[i]==' ')  /*·í¦r¤¸¬°ªÅ¥Õ®É¡A¦L¥XªÅ¥Õ*/
+        if (s[i]==' ')  /*ç•¶å­—å…ƒç‚ºç©ºç™½æ™‚ï¼Œå°å‡ºç©ºç™½*/
             printf("");
-        else if (isalpha(s[i]))  /*·í¦r¤¸¬°­^¤å¦r¥À®É¡A¤£©ñ¤Jstackª½±µprint*/
+        else if (isalpha(s[i]))  /*ç•¶å­—å…ƒç‚ºè‹±æ–‡å­—æ¯æ™‚ï¼Œä¸æ”¾å…¥stackç›´æ¥print*/
             printf("%c",s[i]);
-        else      /*°£¥h¥H¤W¨âºØ±ø¥ó¡A³Ñ¤Uªº§Y¬O·í¦r¤¸¬°¹Bºâ¤lªº±¡ªp*/
-            if (precedence(s[i]) > precedence(stack[top]))  /*·í¦r¤¸ªºpredence>stack¤º¹Bºâ¤lªºpredence®É¡AÀ£±o¦í¡A¦]¦¹push*/
+        else      /*é™¤å»ä»¥ä¸Šå…©ç¨®æ¢ä»¶ï¼Œå‰©ä¸‹çš„å³æ˜¯ç•¶å­—å…ƒç‚ºé‹ç®—å­çš„æƒ…æ³*/
+            if (precedence(s[i]) > precedence(stack[top]))  /*ç•¶å­—å…ƒçš„predence>stackå…§é‹ç®—å­çš„predenceæ™‚ï¼Œå£“å¾—ä½ï¼Œå› æ­¤push*/
             {
                 stack[++top]=s[i];
             }
-            else  /*¤Ï¤§·íÀ£¤£¦í®É*/
+            else  /*åä¹‹ç•¶å£“ä¸ä½æ™‚*/
             {
                 while (precedence(s[i]) <=precedence(stack[top])  &&  top>-1)
-                {  /*stack¤º©Ò¦³¹Bºâ¤l³£¥²¶·¤ñ¸ûprecedence¡A¦]¦¹¥Îwhile°j°é
-                    ·íÀ£¤£¦í¥Btop>-1®Épop¤@­Ó¹Bºâ¤l¨Ãprint*/
+                {  /*stackå…§æ‰€æœ‰é‹ç®—å­éƒ½å¿…é ˆæ¯”è¼ƒprecedenceï¼Œå› æ­¤ç”¨whileè¿´åœˆ
+                    ç•¶å£“ä¸ä½ä¸”top>-1æ™‚popä¸€å€‹é‹ç®—å­ä¸¦print*/
                     printf("%c",stack[top--]);
                 }
-                stack[++top]=s[i];  /*¦pªGstack¬°ªÅ (top==0)¤]­n±N¹Bºâ¤lpush*/
+                stack[++top]=s[i];  /*å¦‚æœstackç‚ºç©º (top==0)ä¹Ÿè¦å°‡é‹ç®—å­push*/
             };
         if(maxtop<top)
         {
@@ -62,8 +62,8 @@ int main()
     }
     printf("\nmaxtop:%d\n\n",maxtop);
     fclose(fin);
-/*--------------¥H¤U­«½Æ¨BÆJ°µinput2----------------------*/
-    top=-1;     /*¥u»İ­n§ïÀÉ¦W¥H¤Î±NstackÂk0top=-1  */
+/*--------------ä»¥ä¸‹é‡è¤‡æ­¥é©Ÿåšinput2----------------------*/
+    top=-1;     /*åªéœ€è¦æ”¹æª”åä»¥åŠå°‡stackæ­¸0top=-1  */
     fin=fopen("6input-2.txt","r");
     printf("Input 2:\n");
     fscanf(fin,"%[^\n]",&s);
