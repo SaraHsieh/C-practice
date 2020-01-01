@@ -5,8 +5,8 @@
 
 typedef struct
 {
-    int floor;  /*¦ì¸m*/
-    int count;  /*²Ä´X¦¸*/
+    int floor;  /*ä½ç½®*/
+    int count;  /*ç¬¬å¹¾æ¬¡*/
 }Data;
 Data lift[MAX];
 
@@ -26,9 +26,9 @@ int main()
     while(rear!=front)
     {
         Data temp;
-        temp=lift[++front];  /*±qqueue¨ú¥X¤W¤@­Ó«ô³Xªº­È*/
-        visit[temp.floor]=1;  /*±N«ô³X¹Lªº¼Ó¼h¼Ð¬°1*/
-        up=temp.floor+k[temp.floor];  /*­pºâ¤W¤U¼Ó«áªº¼Ó¼h¦ì¸m*/
+        temp=lift[++front];  /*å¾žqueueå–å‡ºä¸Šä¸€å€‹æ‹œè¨ªçš„å€¼*/
+        visit[temp.floor]=1;  /*å°‡æ‹œè¨ªéŽçš„æ¨“å±¤æ¨™ç‚º1*/
+        up=temp.floor+k[temp.floor];  /*è¨ˆç®—ä¸Šä¸‹æ¨“å¾Œçš„æ¨“å±¤ä½ç½®*/
         down=temp.floor-k[temp.floor];
         if(up==target || down==target)
         {
@@ -37,9 +37,9 @@ int main()
             break;
         }
         if(up>0 && up<=n && !visit[up])
-        { /*¤W¼Ó¤£¶W¹L¼Ó¼h½d³ò¥B¸Ó¼Ó¼h¤£´¿³Q«ô³X----->¥i¦¨¥\¤W¼Ó*/
-            lift[++rear].floor=up;  /*±N·s¦ì¸m©ñ¤Jqueue*/
-            lift[rear].count=temp.count+1;  /*§¤¹q±èªº¦¸¼Æ+1*/
+        { /*ä¸Šæ¨“ä¸è¶…éŽæ¨“å±¤ç¯„åœä¸”è©²æ¨“å±¤ä¸æ›¾è¢«æ‹œè¨ª----->å¯æˆåŠŸä¸Šæ¨“*/
+            lift[++rear].floor=up;  /*å°‡æ–°ä½ç½®æ”¾å…¥queue*/
+            lift[rear].count=temp.count+1;  /*åé›»æ¢¯çš„æ¬¡æ•¸+1*/
         }
         if(down>0 && down<=n && !visit[down])
         {
