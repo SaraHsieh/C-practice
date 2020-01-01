@@ -47,12 +47,12 @@ int main()
     fscanf(fin,"%d %d",&start,&end);
 
     for(i=1;i<=n;i++)
-    {  /*distance¥Î¨Ó¦sstart¨ì¦UÂIªº¶ZÂ÷*/
+    {  /*distanceç”¨ä¾†å­˜startåˆ°å„é»žçš„è·é›¢*/
         distance[i]=cost[start][i];
     }
     visit[start]=1;
     previous[start]=-1;
-    next=choose(); /*¥ý¿ï¥Xcost³Ì¤pªºÃä·í°_ÂI*/
+    next=choose(); /*å…ˆé¸å‡ºcostæœ€å°çš„é‚Šç•¶èµ·é»ž*/
     previous[next]=start;
     //visit[next]=1;
     //distance[start]=0;
@@ -60,8 +60,8 @@ int main()
 
     while(count<n)
     {
-        next=choose();  /*choose¤¤·|¿ïcost³Ì¤pªº¡A«e­±ªºµ{¦¡¤¤¤w¸g³]©w°_ÂIªºcost¬°0¡A¦]¦¹²Ä¤@­Ó¿ïªº¬°°_ÂI*/
-        if(next<0)  /*choose¤¤³Ì¤@¶}©lªº¦^¶Ç­Èu=-1*/
+        next=choose();  /*chooseä¸­æœƒé¸costæœ€å°çš„ï¼Œå‰é¢çš„ç¨‹å¼ä¸­å·²ç¶“è¨­å®šèµ·é»žçš„costç‚º0ï¼Œå› æ­¤ç¬¬ä¸€å€‹é¸çš„ç‚ºèµ·é»ž*/
+        if(next<0)  /*chooseä¸­æœ€ä¸€é–‹å§‹çš„å›žå‚³å€¼u=-1*/
             break;
         visit[next]=1;
 
