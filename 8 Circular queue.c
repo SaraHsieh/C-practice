@@ -4,7 +4,7 @@
 #define MAX 6
 
 int add(FILE* f,int front,int rear,int num,int *queue)
-{  /*¥[¤@­Ó­È¨ìqueueªº°Æ¨ç¦¡*/
+{  /*åŠ ä¸€å€‹å€¼åˆ°queueçš„å‰¯å‡½å¼*/
     if(front==((rear+1)%MAX))
     {
         printf("Queue is full.\n");
@@ -19,7 +19,7 @@ int add(FILE* f,int front,int rear,int num,int *queue)
 }
 
 int del(FILE* f,int front, int rear, int *queue)
-{  /*±qqueue pop¤@­Ó­È*/
+{  /*å¾queue popä¸€å€‹å€¼*/
     if (front==rear)
     {
         printf("The queue is empty.\n");
