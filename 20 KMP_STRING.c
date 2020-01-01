@@ -57,7 +57,7 @@ int read_csv(data* list,char* patt)
     int i=0;
     char P;
     fin=fopen("20input.txt","r");
-    while(!feof(fin) && P!='P')  /*·íÀÉ®×¥¼µ²§ô¡A¥B½T»{Pattern¤wÅª¨ì§Y¥i¸õ¥X°j°é*/
+    while(!feof(fin) && P!='P')  /*ç•¶æª”æ¡ˆæœªçµæŸï¼Œä¸”ç¢ºèªPatternå·²è®€åˆ°å³å¯è·³å‡ºè¿´åœˆ*/
     {
         fscanf(fin,"%[a-z]%*c%d\n",&list[i].name,&list[i].index);
         printf("%s,%d\n",list[i].name,list[i].index);
